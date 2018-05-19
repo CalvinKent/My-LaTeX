@@ -1,0 +1,50 @@
+% Prepared by Calvin Kent
+%
+% Lecture Template v18.5
+%
+\documentclass[11pt]{article} %
+\usepackage{CKpreamble}
+\usepackage{CKlecture}
+%
+\begin{document}
+	% Start of Class settings
+	\renewcommand*{\Term}{Term 201x} % Term
+	\renewcommand*{\CourseCode}{MATH 000} % Course code
+	\renewcommand*{\CourseName}{Course Name} % Full course name
+	\renewcommand*{\ProfName}{ProfFName ProfLName} % Prof Name
+	\renewcommand*{\LDate}{00 MONTH 201x} % Lecture date
+	\renewcommand*{\COlink}{http://www.student.math.uwaterloo.ca/~c2kent/} % Course outline link
+	% End of Class settings
+	\pagenumbering{gobble}
+	\lecturetitle
+	\tableofcontents
+	\addtocontents{toc}{~\hfill\textbf{Page}\par} % "Page" text added to ToC
+	\cleardoublepage
+	\pagenumbering{roman}
+	\newpage
+	\section*{Preface and Acknowledgments}\addcontentsline{toc}{section}{Preface and Acknowledgments}
+	\CKpreface
+	\rrule
+	\hfill Calvin KENT
+	\cleardoublepage
+	\pagenumbering{arabic}
+	\newpage
+	\pagestyle{Lecture}
+	\newgeometry{left=18mm, right=18mm, top=22mm, bottom=22mm} % page is set to default values
+	\fancyhfoffset[E,O]{0pt} % header orientation fixed
+	% often used commands
+	\begin{comment}
+		% \addtoc{name} % adds item to ToC under subsection
+		% \addstoc{name} % adds item to ToC under subsubsection 	
+		% \begin{lec} 
+		%
+		%
+	\end{comment}
+	% Course notes start
+\begin{lec}{02 May 2018}
+	Lecture
+\end{lec}
+\begin{lec}{04 May 2018}
+	Lecture
+\end{lec}
+\end{document}
