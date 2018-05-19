@@ -1,0 +1,143 @@
+% Prepared by Calvin Kent
+%
+% CKpreamble: Package for lectures
+% 
+% MIT License
+%
+% Copyright (c) 2018 Calvin Kent
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% 
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+% 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{CKlecture}[2018/05/19 v18.5 LaTeX package for lectures]
+% Start: Lecture PREAMBLE ...
+\renewcommand*{\benvVar}{Proof}
+% Class specific macros
+\newcommand*{\Term}{Season 2000} % Term
+\newcommand*{\CourseCode}{MATH xxx} % Course code
+\newcommand*{\CourseName}{Mathematics Course} % Full course name
+\newcommand*{\LDate}{00 MONTH 201x} % Lecture date
+\newcommand*{\ProfName}{ProfFName ProfLName} % Prof Name
+\newcommand*{\COlink}{http://www.student.math.uwaterloo.ca/~c2kent/} % Course outline link
+\newcounter{lecnum} % Lecture number
+
+%custom theorem style
+\newtheoremstyle{note}% name
+{8pt}%      Space above
+{4pt}%      Space below
+{}%         Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{:}%        Punctuation after thm head
+{.5em}%     Space after thm head: " " = normal interword space;
+{}%         Thm head spec (can be left empty, meaning `normal')
+
+% theorems
+\newcommand{\newthrm}[1]{
+\theoremstyle{note}
+\newtheorem
+}
+\theoremstyle{note}
+\newtheorem{defn}[subsection]{Definition}
+\newtheorem{thrm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{ex}[defn]{Example}
+\newtheorem{exs}[defn]{Examples}
+\newtheorem{rec}[defn]{Recall}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{fact}[defn]{Fact}
+\newtheorem{notn}[defn]{Notation}
+\newtheorem{rem}[defn]{Remark}
+\newtheorem{rems}[defn]{Remarks}
+\newtheorem{exe}[defn]{Exercise}
+\newtheorem*{aside}{Aside}
+
+% Setup lecture pagestyle
+\fancypagestyle{Lecture}
+{
+	\lhead{Lecture \thelecnum}
+	\chead{\CourseCode}
+	\rhead{\LDate}
+	\lfoot{\Term}
+	\cfoot{}
+	\rfoot{\thepage}
+	\renewcommand\headrulewidth{0.1pt}
+	\renewcommand\footrulewidth{0.1pt}
+}
+
+% renaming ToC name by babel, see more: https://tex.stackexchange.com/questions/28516/how-to-change-the-title-of-toc
+\addto\captionsenglish{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{Table of Contents}%
+}
+% lec environment, takes mandatory field as lecture date, increments lecture number, adds new invissection to ToC, finishes with \brule 
+\NewDocumentEnvironment{lec}% 
+{	m	}%
+%	 ⤷ #1  lecture date
+{	
+	\stepcounter{lecnum}
+	\renewcommand*{\LDate}{#1}
+	\invissection{#1}
+}
+{	
+	\vfill
+	\par\makebox[\linewidth]{
+		\color{RubineRed}\hrulefill\raisebox{-.8ex}[0cm][0.45cm]{  \color{black}End of Lecture \thelecnum}
+	}
+	\newpage
+}
+
+% lecture title page
+\newcommand{\lecturetitle}{
+	{
+		\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+		\begin{center}
+		% HEADING SECTIONS
+		\textsc{\large Lecture Notes}\\[0.5cm]
+		\href{\COlink}{\textsc{\LARGE \CourseCode: \CourseName}}\\[0.75cm] % Major heading such as course name
+		\end{center}
+		\begin{minipage}{0.5\textwidth}
+			\begin{flushleft}
+			\underline{Prepared by:} \textsc{Calvin KENT} \\
+			\color{blue}\small{\url{www.student.math.uwaterloo.ca/~c2kent/}}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+%			\begin{flushright}
+				\underline{Instructor:}\textsc{ \ProfName} \\
+				\underline{Term:}\textsc{ \Term}
+%			\end{flushright}
+		\end{minipage}
+		\\~\\
+		\HRule
+		
+		\vspace*{-0.19cm}
+		\hfill Last revised: \today
+		\vspace*{-0.75cm}
+	}
+}
+
+\newcommand{\CKpreface}{
+This PDF document includes lecture notes for \href{\COlink}{{\CourseCode} - {\CourseName} taught by {\ProfName} in \Term}.\\~\\
+For any questions e-mail me at \texttt{c2kent(at)uwaterloo(dot)ca}.
+}
+
+% End: ... Lecture PREAMBLE
+\endinput
