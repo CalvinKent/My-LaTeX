@@ -1,0 +1,210 @@
+% Prepared by Calvin Kent
+%
+% CKlecture: Package for lectures
+% 
+% MIT License
+%
+% Copyright (c) 2018 Calvin Kent
+%
+% Permission is hereby granted, free of charge, to any person obtaining a copy
+% of this software and associated documentation files (the "Software"), to deal
+% in the Software without restriction, including without limitation the rights
+% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+% copies of the Software, and to permit persons to whom the Software is
+% furnished to do so, subject to the following conditions:
+% 
+% The above copyright notice and this permission notice shall be included in all
+% copies or substantial portions of the Software.
+% 
+% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+% SOFTWARE.
+% 
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{CKlecture}[2018/06/11 v18.6 LaTeX package for lectures]
+% Start: Lecture PREAMBLE ...
+\renewcommand*{\benvVar}{Proof}
+% Class specific macros
+\newcommand*{\Term}{Season 2000} % Term
+\newcommand*{\CourseCode}{MATH xxx} % Course code
+\newcommand*{\CourseName}{Mathematics Course} % Full course name
+\newcommand*{\LDate}{00 MONTH 201x} % Lecture date
+\newcommand*{\ProfName}{ProfFName ProfLName} % Prof Name
+\newcommand*{\COlink}{http://www.student.math.uwaterloo.ca/~c2kent/} % Course outline link
+\newcounter{lecnum} % Lecture number
+\newcounter{chapnum}
+
+%changing the section numbering
+\renewcommand\thesection{\arabic{section}}
+
+%changing fonts of ToC entries:
+\renewcommand{\cfttoctitlefont}{\bfseries\huge}
+\renewcommand{\cftchapfont}{\large\bfseries\scshape}
+\renewcommand{\cftsecfont}{\bfseries}
+
+%setting lengths, see more: https://tex.stackexchange.com/questions/64229/how-to-change-font-size-in-table-of-contents// and https://tex.stackexchange.com/questions/123952/increasing-spacing-between-section-number-and-title-in-the-table-of-contents// and http://ctan.math.ca/tex-archive/macros/latex/contrib/tocloft/tocloft.pdf
+\setlength{\cftbeforetoctitleskip}{2.5em}
+\setlength{\cftaftertoctitleskip}{-0.5em}
+\renewcommand\cftchapafterpnum{\par\addvspace{4pt}}
+\renewcommand\cftsecafterpnum{\par\addvspace{3pt}}
+\renewcommand\cftsubsecafterpnum{\par\addvspace{1pt}}
+\cftsetindents{chapter}{0em}{1em}
+\cftsetindents{section}{1em}{1.9em}
+
+%custom theorem style
+\newtheoremstyle{note}% name
+{8pt}%      Space above
+{4pt}%      Space below
+{}%         Body font
+{}%         Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}% Thm head font
+{:}%        Punctuation after thm head
+{.5em}%     Space after thm head: " " = normal interword space;
+{}%         Thm head spec (can be left empty, meaning `normal')
+
+% theorems
+\newcommand{\newthrm}[1]{
+\theoremstyle{note}
+\newtheorem
+}
+\theoremstyle{note}
+\newtheorem{defn}[subsection]{Definition}
+\newtheorem{thrm}[defn]{Theorem}
+\newtheorem{cor}[defn]{Corollary}
+\newtheorem{lem}[defn]{Lemma}
+\newtheorem{ex}[defn]{Example}
+\newtheorem{exs}[defn]{Examples}
+\newtheorem{rec}[defn]{Recall}
+\newtheorem{prop}[defn]{Proposition}
+\newtheorem{fact}[defn]{Fact}
+\newtheorem{notn}[defn]{Notation}
+\newtheorem{rem}[defn]{Remark}
+\newtheorem{rems}[defn]{Remarks}
+\newtheorem{exe}[defn]{Exercise}
+\newtheorem*{aside}{Aside}
+
+% Setup prefack pagestyle
+\fancypagestyle{prefack}
+{	\cfoot{\thepage}}
+
+% Setup lecture pagestyle
+\fancypagestyle{Lecture}
+{
+	\lhead{Lecture \thelecnum}
+	\chead{\CourseCode}
+	\rhead{\LDate}
+	\lfoot{\Term}
+	\cfoot{}
+	\rfoot{\thepage}
+	\renewcommand\headrulewidth{0.1pt}
+	\renewcommand\footrulewidth{0.1pt}
+}
+
+% renaming ToC name by babel, see more: https://tex.stackexchange.com/questions/28516/how-to-change-the-title-of-toc
+\addto\captionsenglish{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{Table of Contents}%
+}
+% lec environment, takes mandatory field as lecture date, increments lecture number, adds new invissection to ToC, finishes with \brule 
+\NewDocumentEnvironment{lec}% 
+{	m	}%
+%	 ⤷ #1  lecture date
+{	
+	\stepcounter{lecnum}
+	\renewcommand*{\LDate}{#1}
+	\invislec{#1}
+%	\begin{center}
+%		\textbf{Lecture \thelecnum\: --- \LDate}
+%	\end{center}
+%	\rrule
+	\vspace*{-1.3cm}
+	\par\makebox[\linewidth]{
+		\raisebox{-.8ex}[0cm][0.45cm]{\hspace*{-0.27cm} \textbf{\color{black}Start of Lecture \thelecnum\;}}\color{RubineRed}\hrulefill
+	}
+}
+{	
+	\vfill
+	\par\makebox[\linewidth]{
+		\hspace*{-0.14cm}\color{RubineRed}\hrulefill\raisebox{-.8ex}[0cm][0.45cm]{  \textbf{\color{black}End of Lecture \thelecnum}}
+	}
+	\newpage
+}
+
+% lecture title page
+\newcommand{\classtitle}{
+		\clearpage
+		\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+		\begin{center}
+		% HEADING SECTIONS
+		\textsc{\large Lecture Notes}\\[0.5cm]
+		\href{\COlink}{\textsc{\LARGE \CourseCode: \CourseName}}\\[0.75cm] % Major heading such as course name
+		\end{center}
+		\begin{minipage}{0.5\textwidth}
+			\begin{flushleft}
+			\underline{Prepared by:} \textsc{Calvin KENT} \\
+			\color{blue}\small{\url{www.student.math.uwaterloo.ca/~c2kent/}}
+			\end{flushleft}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+%			\begin{flushright}
+				\underline{Instructor:}\textsc{ \ProfName} \\
+				\underline{Term:}\textsc{ \Term}
+%			\end{flushright}
+		\end{minipage}
+		\\~\\
+		\HRule
+		
+		\vspace*{-0.19cm}
+		\hfill Last revised: \today
+		\vspace*{-1.55cm}
+		\addctoc{\huge\textup{Table of Contents}}
+		\tableofcontents
+		\addtocontents{toc}{~\hfill\textbf{Page}\par} % "Page" text added to ToC
+		\clearpage
+}
+
+%invissection for lectures, similar to invissection
+\newcommand{\invislec}[1]{%
+	\par\refstepcounter{section}% Increase section counter
+	\sectionmark{#1}% Add section mark (header)
+	\addcontentsline{toc}{section}{L\thelecnum:\;#1}% Add section to ToC and preserve number line, see more: https://tex.stackexchange.com/questions/23558/typeset-cftchapfont-as-uppercase
+	\clearpage
+	% Add more content here, if needed.
+}
+
+% macro for quickly adding items to ToC under chapter
+\newcommand{\addctoc}[1]{
+	\phantomsection\addcontentsline{toc}{chapter}{#1}
+}
+
+% macro for quickly adding items to ToC under subsection
+\newcommand{\addtoc}[1]{
+	\phantomsection\addcontentsline{toc}{subsection}{#1}
+}
+% macro for quickly adding items to ToC under subsubsection
+\newcommand{\addstoc}[1]{
+	\phantomsection\addcontentsline{toc}{subsubsection}{#1}
+}
+
+\newcommand{\lecchapter}[1]{
+	\stepcounter{chapnum}
+	\phantomsection\addcontentsline{toc}{chapter}{Chapter \thechapnum{  }--{  }#1}% Add section to ToC
+	\clearpage
+% Add more content here, if needed.
+}
+
+\newcommand{\CKpreface}{
+This PDF document includes lecture notes for \href{\COlink}{{\CourseCode} - {\CourseName} taught by {\ProfName} in \Term}.\\~\\
+For any questions e-mail me at \texttt{c2kent(at)uwaterloo(dot)ca}.
+}
+%setting ToC title to empty string
+\addto\captionsenglish{% Replace "english" with the language you use
+	\renewcommand{\contentsname}%
+	{~}%
+}
+% End: ... Lecture PREAMBLE
+\endinput
