@@ -12,4 +12,4 @@ Description of .tex files.
 
 - Crowdmark: Template for assignments submitted by Crowdmark.
 - Lecture: Template for lectures.
-- PrintedAssignment: Template for printedAssignments.
+- PrintedAssignment: Template for printed assignments or printed projects.
