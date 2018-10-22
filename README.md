@@ -3,9 +3,9 @@ This repo includes my LaTeX documents.
 
 Description of .sty files.
 
+- **CKpreamble**: Preamble for every document.
 - CKcrowdmark.sty: For assignments submitted by Crowdmark.
 - CKlecture: For lectures.
-- CKpreamble: Preamble for every document.
 - CKprintedassignment: For printed assignments.
 
 Description of .tex files.
