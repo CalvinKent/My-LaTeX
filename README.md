@@ -11,6 +11,6 @@ Description of .sty files.
 
 Description of .tex files.
 
-- Crowdmark: Template for assignments submitted by Crowdmark. __CROWDMARK SAMPLE__
-- Lecture: Template for lectures. __LECTURE SAMPLE__
-- PrintedAssignment: Template for printed assignments or printed projects. __PRINTED ASSIGNMENT SAMPLE__
+- Crowdmark: Template for assignments submitted by Crowdmark. [__CROWDMARK SAMPLE__](http://www.student.math.uwaterloo.ca/~c2kent/LectureNotes/templates/Crowdmark.pdf#page=7)
+- Lecture: Template for lectures. [__LECTURE SAMPLE__](http://www.student.math.uwaterloo.ca/~c2kent/)
+- PrintedAssignment: Template for printed assignments or printed projects. [__PRINTED ASSIGNMENT SAMPLE__](http://www.student.math.uwaterloo.ca/~c2kent/)
