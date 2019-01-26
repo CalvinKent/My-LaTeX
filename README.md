@@ -1,7 +1,7 @@
 # My-LaTeX
 This repo includes my LaTeX documents.
 
-Changes from v18
+Changes from v18:
 
 - Cleaned the code and deleted unnecessary cluttering macros
 - Merged Crowdmark.sty and PrintedAssignment.sty into CKassignment.sty
