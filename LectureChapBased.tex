@@ -1,0 +1,64 @@
+% Prepared by Calvin Kent
+%
+% Lecture Template v19.02
+%
+%%% 201901/MATHxxx/Notes
+%
+\documentclass[11pt,oneside]{book} %
+\usepackage{CKpreamble}
+\usepackage{CKlecture}
+%
+\renewcommand*{\doctitle}{Chapter Based Lecture Notes}
+%\makeatletter\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}\makeatother % only used in class based
+\begin{document}
+	% Start of Class settings
+	\renewcommand*{\term}{Term 2000} % Term
+	\renewcommand*{\coursecode}{MATH 000} % Course code
+	\renewcommand*{\coursename}{Course Name} % Full course name
+	\renewcommand*{\profname}{Prof Name} % Prof Name
+	\renewcommand*{\colink}{http://www.student.math.uwaterloo.ca/~c2kent} % Course outline link
+	% End of Class settings
+	\setfigpath
+	\pagenumbering{roman}
+	\inserttoctitle
+	\pagestyle{plain}
+	\addctoc{\small Preface and Notation}
+	\section*{Preface and Notation}
+	\ckpreface
+	\crule{ForestGreen!50}
+	\section*{Notation}
+	Throughout the course and the notes, unless otherwise is explicitly stated, we adopt the following conventions and notations.
+	\begin{itemize}
+		\item ~
+		\item ~
+	\end{itemize}
+	\crule{red}
+	\hfill Calvin KENT
+	\clearpage
+	\pagenumbering{arabic}
+	\pagestyle{chapterlecture}
+	%%% Note to user: CTRL + F <CHANGE ME:> (without the angular brackets) in CKpreamble to specify graphics paths accordingly.
+	%%% If a new chapter was started in the middle of a lecture, %\fixchap{Second Chapter} must be used immediately above the next lecture.
+	% Course notes start
+	\setchap{1}{First Chapter}[1][x]
+	% Start of lecture % {00 January 2019}
+		\chapter{\chapname\chaplec}
+		\section{Source code for .sty and .tex files are available on Github}
+		\subsection{Links}
+		Templates: \url{http://www.student.math.uwaterloo.ca/~c2kent/LectureNotes/index.html}\\
+		Github: \url{https://github.com/CalvinKent/My-LaTeX}
+		\subsection{Conversion to Chapter Based}
+		Running the macros below (js) converts the class based .tex into chapter based .tex:\\
+		\url{https://pastebin.com/Wbrdqh15}\\
+		\url{https://pastebin.com/zknP73US}\\[\baselineskip]
+	% End of lecture % 
+	% Start of lecture % {50 January 2019}[Midterm]
+		Today's class was canceled due to midterm.
+	% End of lecture % 
+\end{document}
+%\fixchap{Second Chapter}
+%	\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.75\linewidth]{p}
+%	\caption{caption.\label{fig:}}
+%	\end{figure}

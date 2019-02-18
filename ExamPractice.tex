@@ -1,0 +1,64 @@
+% Prepared by Calvin Kent
+%
+% Exam Practice Template v19.02
+%
+%%% 201901/MATHxxx/Midterm or Final Practice
+%
+\documentclass[11pt,oneside]{book} %
+\usepackage{CKpreamble}
+\usepackage{CKlecture}
+%
+\renewcommand*{\doctitle}{Exam Practice}
+\begin{document}
+	% Start of Class settings
+	\renewcommand*{\headtitle}{MATH xxx Midterm yy Practice} % Head title
+	\renewcommand*{\term}{Term 2000} % Term
+	\renewcommand*{\coursecode}{MATH 000} % Course code
+	\renewcommand*{\coursename}{Course Name} % Full course name
+	\renewcommand*{\profname}{ProfFName ProfLName} % Prof Name
+	\renewcommand*{\cnlink}{http://www.student.math.uwaterloo.ca/~c2kent/} % course notes link Course notes link
+	% End of Class settings
+	\setfigpath
+	\pagenumbering{roman}
+	\inserttoctitle
+	\pagestyle{plain}
+	\addctoc{\small Preface and Notation}
+	\section*{Preface and Notation}
+	\fppreface
+	\crule{red}
+	\hfill Calvin KENT
+	\clearpage
+	\pagenumbering{arabic}
+	\pagestyle{examprac}
+	\renewcommand{\chaptermark}[1]{ \markboth{#1}{} }
+	\renewcommand{\sectionmark}[1]{ \markright{#1}{} }
+	%%% Note to user: CTRL + F <CHANGE ME:> (without the angular brackets) in CKpreamble to specify graphics paths accordingly.
+	% Exam practice sheet start
+\begin{pracchap}[1]{First Chapter}
+	\section{Source code for .sty and .tex files are available on Github}
+	\subsection{Links}
+	Templates: \url{http://www.student.math.uwaterloo.ca/~c2kent/LectureNotes/index.html}\\
+	Github: \url{https://github.com/CalvinKent/My-LaTeX}
+\end{pracchap}
+\begin{pracchap}[-1]{Set Theory}
+	\begin{rem}
+		content...
+	\end{rem}
+	\section{Cardinality}
+	\begin{thrm}
+		content...
+	\end{thrm}
+	\begin{proof}
+		content...
+	\end{proof}
+	\subsection{Continuum Hypothesis}
+	\begin{qsm}
+		content...
+	\end{qsm}
+\end{pracchap}
+\end{document}
+%	\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.75\linewidth]{p}
+%	\caption{caption.\label{fig:}}
+%	\end{figure}
