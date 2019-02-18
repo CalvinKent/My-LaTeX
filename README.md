@@ -1,5 +1,5 @@
 # My-LaTeX
-This repo includes my LaTeX documents. Templates and fully finished notes can be found on http://www.student.math.uwaterloo.ca/~c2kent/LectureNotes/index.html.
+This repo includes my LaTeX documents. Templates and fully finished notes can be found at http://www.student.math.uwaterloo.ca/~c2kent/LectureNotes/index.html.
 
 #### Note to user:
 
