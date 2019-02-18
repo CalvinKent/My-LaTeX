@@ -3,15 +3,15 @@ This repo includes my LaTeX documents.
 
 #### Note to user:
 
-User should CTRL + F `CHANGE ME` in `CKpremable.sty` and properly setup the figures directory.
+User should find `CHANGE ME` in `CKpremable.sty` and edit accordingly to properly setup the figures directory.
 
 ### Changes from v18:
 
 - Cleaned the code and deleted unnecessary cluttering macros
 - Merged Crowdmark.sty and PrintedAssignment.sty into CKassignment.sty
-- Various macros behave accordingly to specific class. i.e. if the class is specified as PMATH 351, then the figures path is automatically set to figures/pmath351 folder etc.
+- Various macros now behave accordingly to specific class. e.g. if the class is specified as PMATH 351, then the figures path is automatically set to figures/pmath351 folder
 
-NOTE: Ideally, user should use only the packages they need for their document. For ease of use, I included most of the packages I use in my preamble. This is very practical but highly inefficient.
+**NOTE:** Ideally, user should use only the packages they need for their document. For ease of use, I included most of the packages I use in my preamble. This is very practical but highly inefficient.
 
 ### Description of .sty files.
 
