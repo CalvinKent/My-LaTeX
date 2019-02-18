@@ -11,7 +11,7 @@ User should CTRL + F `CHANGE ME` in `CKpremable.sty` and properly setup the figu
 - Merged Crowdmark.sty and PrintedAssignment.sty into CKassignment.sty
 - Various macros behave accordingly to specific class. i.e. if the class is specified as PMATH 351, then the figures path is automatically set to figures/pmath351 folder etc.
 
-NOTE: Ideally, you should only use the packages you need for your document. For ease of use, I included most of the packages I use in my preamble. This is very practical but highly inefficient.
+NOTE: Ideally, user should use only the packages they need for their document. For ease of use, I included most of the packages I use in my preamble. This is very practical but highly inefficient.
 
 ### Description of .sty files.
 
